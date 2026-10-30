@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Futuristic_Girl_Armor Pink
+  m_Shader: {fileID: 4800000, guid: e7dd233ff5eb69548b2c18e34748a2ec, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseColorMap:
+        m_Texture: {fileID: 2800000, guid: 6120744f4ba3d4f4aaca3ad9bbb73f8b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MASKS:
+        m_Texture: {fileID: 2800000, guid: 96cbc3d0128e66d449e9f0cd23b4ef1a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MASKS2:
+        m_Texture: {fileID: 2800000, guid: 333c514259850b24593d7ac6577bae6e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask_1:
+        m_Texture: {fileID: 2800000, guid: 5fecf0d7e37e1024f8a48d49ceb033de, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask_2:
+        m_Texture: {fileID: 2800000, guid: 1f943dac066bda3409132000ae309b34, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicAOGlossiness:
+        m_Texture: {fileID: 2800000, guid: 96a48535f008d954e8ca57cff8673b72, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicAOSmoothness:
+        m_Texture: {fileID: 2800000, guid: 96a48535f008d954e8ca57cff8673b72, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: beeec318ef073c14685df082f9cec175, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Soldier_low2_Armor2_Normal:
+        m_Texture: {fileID: 2800000, guid: 4cab846100ed011469cc37bd51f05238, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _Dirtintensity: 0.2
+    - _DstBlend: 0
+    - _Emission: 0
+    - _Emissionintensity: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    - __dirty: 0
+    m_Colors:
+    - _ArmorColor: {r: 0.6792453, g: 0.6444591, b: 0.63054466, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1: {r: 0.75686276, g: 0.7607843, b: 0.7647059, a: 0}
+    - _Color2: {r: 0.8156863, g: 0.41960785, b: 0.65882355, a: 0}
+    - _Color3: {r: 0.6431373, g: 0.6431373, b: 0.6431373, a: 0}
+    - _Color4: {r: 0.47843137, g: 0.3882353, b: 0.65882355, a: 0}
+    - _Color5: {r: 0.20784314, g: 0.20784314, b: 0.20784314, a: 0}
+    - _Color6: {r: 0, g: 0, b: 0, a: 0}
+    - _DirtColor: {r: 0.5283019, g: 0.4724813, b: 0.43061587, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _MetallColor: {r: 0.53333336, g: 0.54509807, b: 0.5529412, a: 0}
+    - _PatternColor: {r: 0.8773585, g: 0.29300457, b: 0.71428293, a: 0}
+    - _VizorColor: {r: 0.9056604, g: 0.5758633, b: 0.8483044, a: 0}
+  m_BuildTextureStacks: []
