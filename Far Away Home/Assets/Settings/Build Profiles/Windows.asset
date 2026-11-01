@@ -28,6 +28,9 @@ MonoBehaviour:
   - m_enabled: 1
     m_path: Assets/Arcade_Level.unity
     m_guid: 599ae3dd7f2ace84ab45bfdf94c7c6aa
+  - m_enabled: 1
+    m_path: Assets/Arcade_Mini_Game.unity
+    m_guid: 0854c27cd9fa02a41ad2eac9adf8f1e6
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
