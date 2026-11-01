@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 463037fd1054643d5bcc2af48080f87d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 6418180475301049370
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 409446
+  packageName: Worn Sci-Fi Horror Tunnel
+  packageVersion: 1.0.0
+  assetPath: Assets/Survo_Assets/Unity Companion License/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep.asset
+  uploadId: 1009642

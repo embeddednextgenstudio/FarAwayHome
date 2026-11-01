@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a1a802ecaf6775746bb2a929fb554ad8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 409446
+  packageName: Worn Sci-Fi Horror Tunnel
+  packageVersion: 1.0.0
+  assetPath: Assets/Survo_Assets/Unity Companion License/StarterAssets/ThirdPersonController/Prefabs/PlayerFollowCamera.prefab
+  uploadId: 1009642
