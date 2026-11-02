@@ -1,0 +1,210 @@
+fileFormatVersion: 2
+guid: 3a9b518a5303f63478b172606eda93b6
+ModelImporter:
+  serializedVersion: 24600
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+    searchTexturesGlobally: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Alien_Armature|Alien_Idle
+      takeName: Alien_Armature|Alien_Idle
+      internalID: 1912807054573875166
+      firstFrame: 0
+      lastFrame: 101
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000u
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    preBakeConvexCollisionMesh: 0
+    preBakeTriangleCollisionMesh: 0
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    importUVs: -1
+    importVertexColors: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+    calculateBlendshapeNormalsDeltaFromImportedNormals: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Alien_Cyclop(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Alien_Armature
+      parentName: Alien_Cyclop(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Root
+      parentName: Alien_Armature
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.58782345, y: -0.00022713856, z: 0.00023125972, w: 0.8089892}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+    - name: Spine_1
+      parentName: Root
+      position: {x: 5.40319e-10, y: 0.006747009, z: 0.0022662622}
+      rotation: {x: 0.95279026, y: -0.000000036195438, z: -0.00000011358147, w: -0.30362934}
+      scale: {x: 1, y: 0.99999994, z: 0.99999976}
+    - name: Spine_2
+      parentName: Spine_1
+      position: {x: -1.323489e-23, y: 0.0030463077, z: 2.0489097e-10}
+      rotation: {x: -0.08980202, y: 0.06840516, z: 0.6016809, w: 0.790719}
+      scale: {x: 1, y: 1.0000002, z: 0.9999998}
+    - name: Spine_3
+      parentName: Spine_2
+      position: {x: 1.0587912e-24, y: 0.0025958787, z: 1.11758706e-10}
+      rotation: {x: -0.027364288, y: 0.016939526, z: 0.11248442, w: 0.99313223}
+      scale: {x: 1, y: 0.9999998, z: 0.9999999}
+    - name: Spine_4
+      parentName: Spine_3
+      position: {x: 2.2204459e-17, y: 0.0029695092, z: -5.1222755e-11}
+      rotation: {x: -0.010400103, y: 0.0026665991, z: 0.018332716, w: 0.9997743}
+      scale: {x: 1, y: 0.99999964, z: 0.9999996}
+    - name: Spine_5
+      parentName: Spine_4
+      position: {x: -0, y: 0.003248017, z: -3.3861803e-17}
+      rotation: {x: -0.014618857, y: 6.762959e-14, z: 0.0000000034853889, w: 0.9998932}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+    - name: Spine_6
+      parentName: Spine_5
+      position: {x: -0, y: 0.002223145, z: 7.450575e-11}
+      rotation: {x: -0.097162895, y: -0.00000011864529, z: 0.00000003474818, w: 0.99526846}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Spine_6_end
+      parentName: Spine_6
+      position: {x: -0, y: 0.0027505562, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eye
+      parentName: Spine_1
+      position: {x: 0.000011001825, y: -0.0007817003, z: -0.0034366692}
+      rotation: {x: -0.9499085, y: -0.00000003725627, z: -0.000000113237896, w: -0.31252828}
+      scale: {x: 1, y: 0.9999999, z: 0.9999996}
+    - name: Eye_end
+      parentName: Eye
+      position: {x: -0, y: 0.001403872, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Alien_Cyclops
+      parentName: Alien_Cyclop(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
