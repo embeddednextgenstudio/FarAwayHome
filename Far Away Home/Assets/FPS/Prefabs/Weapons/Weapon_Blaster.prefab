@@ -146,7 +146,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2225486910712267856
 Transform:
   m_ObjectHideFlags: 0
@@ -199,7 +199,7 @@ MonoBehaviour:
   AimOffset: {x: 0, y: 0.075, z: 0}
   AutomaticReload: 1
   HasPhysicalBullets: 0
-  ClipSize: 30
+  ClipSize: 100
   ShellCasing: {fileID: 0}
   EjectionPort: {fileID: 0}
   ShellCasingEjectionForce: 2

@@ -13,32 +13,42 @@ MonoBehaviour:
   m_Name: Bloom
   m_EditorClassIdentifier: 
   active: 1
+  skipIterations:
+    m_OverrideState: 0
+    m_Value: 1
   threshold:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.9
   intensity:
-    m_OverrideState: 1
-    m_Value: 0.1
+    m_OverrideState: 0
+    m_Value: 0
   scatter:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.7
   clamp:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 65472
   tint:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   highQualityFiltering:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
-  skipIterations:
-    m_OverrideState: 1
-    m_Value: 1
+  filter:
+    m_OverrideState: 0
+    m_Value: 0
+  downscale:
+    m_OverrideState: 0
+    m_Value: 0
+  maxIterations:
+    m_OverrideState: 0
+    m_Value: 6
   dirtTexture:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {fileID: 0}
+    dimension: 1
   dirtIntensity:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
 --- !u!114 &-5759657298589282633
 MonoBehaviour:
@@ -54,19 +64,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   color:
-    m_OverrideState: 1
-    m_Value: {r: 0.18253908, g: 0.0466002, b: 0.3207547, a: 1}
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
   center:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {x: 0.5, y: 0.5}
   intensity:
-    m_OverrideState: 1
-    m_Value: 0.084
+    m_OverrideState: 0
+    m_Value: 0
   smoothness:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.2
   rounded:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -100,8 +110,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   mode:
-    m_OverrideState: 1
+    m_OverrideState: 0
+    m_Value: 0
+  neutralHDRRangeReductionMode:
+    m_OverrideState: 0
     m_Value: 2
+  acesPreset:
+    m_OverrideState: 0
+    m_Value: 3
+  hueShiftAmount:
+    m_OverrideState: 0
+    m_Value: 0
+  detectPaperWhite:
+    m_OverrideState: 0
+    m_Value: 0
+  paperWhite:
+    m_OverrideState: 0
+    m_Value: 300
+  detectBrightnessLimits:
+    m_OverrideState: 0
+    m_Value: 1
+  minNits:
+    m_OverrideState: 0
+    m_Value: 0.005
+  maxNits:
+    m_OverrideState: 0
+    m_Value: 1000
 --- !u!114 &2950893884365311496
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -116,16 +150,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   type:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   intensity:
-    m_OverrideState: 1
-    m_Value: 0.3
+    m_OverrideState: 0
+    m_Value: 0
   response:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.8
   texture:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {fileID: 0}
 --- !u!114 &7827985127269028407
 MonoBehaviour:
@@ -141,14 +175,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   mode:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   quality:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   intensity:
-    m_OverrideState: 1
-    m_Value: 0.35
+    m_OverrideState: 0
+    m_Value: 0
   clamp:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.05

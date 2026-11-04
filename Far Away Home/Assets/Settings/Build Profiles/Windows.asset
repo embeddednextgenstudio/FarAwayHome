@@ -23,17 +23,11 @@ MonoBehaviour:
   m_OverrideGlobalSceneList: 1
   m_Scenes:
   - m_enabled: 1
-    m_path: Assets/Main_Scene.unity
-    m_guid: ddf2a1bf6bcb1084390a3c1aa6a19bad
-  - m_enabled: 1
     m_path: Assets/Arcade_Level.unity
     m_guid: 599ae3dd7f2ace84ab45bfdf94c7c6aa
   - m_enabled: 1
-    m_path: Assets/Arcade_Mini_Game.unity
-    m_guid: 0854c27cd9fa02a41ad2eac9adf8f1e6
-  - m_enabled: 1
-    m_path: Assets/FPS/Scenes/MainScene.unity
-    m_guid: d794a2ef8ba31d847ad3c19d03e2ddb9
+    m_path: Assets/Main_Scene.unity
+    m_guid: ddf2a1bf6bcb1084390a3c1aa6a19bad
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
