@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   normalBias:
     m_OverrideState: 1
-    m_Value: 0.05
+    m_Value: 0.142
   viewBias:
     m_OverrideState: 1
     m_Value: 0.1
@@ -42,7 +42,7 @@ MonoBehaviour:
     m_Value: 1
   skyOcclusionIntensityMultiplier:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 1.9
   worldOffset:
     m_OverrideState: 1
     m_Value: {x: 0, y: 0, z: 0}
@@ -215,7 +215,7 @@ MonoBehaviour:
     m_Value: 0
   tintColor:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 0.38865784, g: 0.64697665, b: 0.83396226, a: 1}
   bloomMip:
     m_OverrideState: 1
     m_Value: 1
@@ -301,19 +301,19 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.9
+    m_Value: 43.7
   intensity:
     m_OverrideState: 1
     m_Value: 0
   scatter:
     m_OverrideState: 1
-    m_Value: 0.7
+    m_Value: 0.55
   clamp:
     m_OverrideState: 1
     m_Value: 65472
   tint:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 0.44294053, g: 0.6284354, b: 0.8792453, a: 1}
   highQualityFiltering:
     m_OverrideState: 1
     m_Value: 0
