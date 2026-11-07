@@ -70,16 +70,16 @@ public sealed class CyberpunkAtmosphere : MonoBehaviour
         runtimeProfile.name = "Runtime Cyberpunk Atmosphere";
 
         var tonemapping = runtimeProfile.Add<Tonemapping>(true);
-        tonemapping.mode.value = TonemappingMode.ACES;
+        tonemapping.mode.value = TonemappingMode.Neutral;
 
         var colorAdjustments = runtimeProfile.Add<ColorAdjustments>(true);
-        colorAdjustments.postExposure.value = 0.45f;
-        colorAdjustments.contrast.value = 12f;
-        colorAdjustments.saturation.value = 18f;
+        colorAdjustments.postExposure.value = 1.0f;
+        colorAdjustments.contrast.value = 5f;
+        colorAdjustments.saturation.value = 10f;
         colorAdjustments.colorFilter.value = new Color(0.92f, 0.97f, 1f, 1f);
 
         var splitToning = runtimeProfile.Add<SplitToning>(true);
-        splitToning.shadows.value = new Color(0.08f, 0.20f, 0.28f, 1f);
+        splitToning.shadows.value = new Color(0.10f, 0.18f, 0.24f, 1f);
         splitToning.highlights.value = new Color(0.38f, 0.18f, 0.40f, 1f);
         splitToning.balance.value = 15f;
 
@@ -91,12 +91,12 @@ public sealed class CyberpunkAtmosphere : MonoBehaviour
 
         var vignette = runtimeProfile.Add<Vignette>(true);
         vignette.color.value = new Color(0.015f, 0.01f, 0.045f, 1f);
-        vignette.intensity.value = 0.14f;
+        vignette.intensity.value = 0.06f;
         vignette.smoothness.value = 0.48f;
         vignette.rounded.value = true;
 
         var chromaticAberration = runtimeProfile.Add<ChromaticAberration>(true);
-        chromaticAberration.intensity.value = 0.035f;
+        chromaticAberration.intensity.value = 0.015f;
 
         var filmGrain = runtimeProfile.Add<FilmGrain>(true);
         filmGrain.intensity.value = 0.06f;
