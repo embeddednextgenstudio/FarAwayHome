@@ -1,34 +1,22 @@
 # Space Shooter Scene
 
-This is an isolated arcade-style space-combat prototype for Far Away Home. It does not replace or modify the existing game scenes.
-
-## Create the scene in Unity
-
-1. Switch to the `feature/space-shooter-scene` branch and pull the latest changes.
-2. Open the project in Unity 6.0 (the project version is 6000.6.4f1).
-3. Wait for Unity to finish compiling.
-4. In the Unity menu, choose **Tools → Far Away Home → Create Space Shooter Scene**.
-5. Open `Assets/Scenes/SpaceShooter/SpaceShooter.unity` and press Play.
-
-The editor builder generates the ship prefabs and materials under `Assets/SpaceShooter/`. Those generated assets are created by your local Unity Editor, not by GitHub.
+Standalone arcade shooter prototype. Create or rebuild it with **Tools → Far Away Home → Create Space Shooter Scene** in Unity 6.
 
 ## Controls
+- Move: WASD or arrow keys
+- Standard laser: hold Space or left mouse button
+- Spread-shot gun: press **2** to switch to a three-laser fan
+- Single laser: press **1**
+- Fireworks super-rocket: press **X** (7-second cooldown)
 
-- **Move:** WASD or arrow keys
-- **Fire:** Space bar or hold the left mouse button
+## Enemy classes
+- **Scout (orange):** small, fast, one-hit enemy with weaving movement
+- **Hunter (purple):** two-hit enemy that strafes while pursuing the player
+- **Tank (cyan):** large, slow, four-hit enemy worth more points
 
-## Prototype features
+## Fireworks super-rocket
+The X rocket launches upward and detonates near the top of the playfield (or when it reaches an enemy). Its colourful fireworks burst destroys every currently active enemy and awards bonus score for each one. The rocket has a seven-second cooldown.
 
-- A blue player ship with bounded movement
-- Repeating cyan laser shots
-- Red enemy ships that spawn above the play area and chase the player
-- Enemy destruction and score increments
-- Three hull points and a game-over message
-- Synthesized laser, enemy explosion, and player damage sound effects
-- Starfield, camera, lighting, and a simple HUD
+The scene is generated from Unity primitives and runtime particle effects; no external art or sound assets are required.
 
-## Notes
-
-- The scene is intentionally built from Unity primitive meshes, so it does not need external art or audio assets. Laser, explosion, and damage sounds are synthesized at runtime.
-- The scene builder creates a standalone test scene. Add it to Build Settings only when you decide you want it included in a build.
-- This change has not been run in the Unity Editor from this workspace. Please test the generated scene locally and share any Console errors before merging it into your main branch.
+This feature has not been run in the Unity Editor in this workspace. Rebuild the scene using the menu item above and check the Unity Console and Play mode before merging.
