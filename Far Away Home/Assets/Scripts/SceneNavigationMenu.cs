@@ -40,6 +40,15 @@ public sealed class SceneNavigationMenu : MonoBehaviour
         BuildInterface();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F1))
+            panel.SetActive(!panel.activeSelf);
+
+        if (Input.GetKeyDown(KeyCode.Escape) && panel.activeSelf)
+            panel.SetActive(false);
+    }
+
     private void BuildInterface()
     {
         EnsureEventSystem();
