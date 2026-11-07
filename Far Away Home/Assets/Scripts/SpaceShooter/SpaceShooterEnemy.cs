@@ -30,7 +30,11 @@ public class SpaceShooterEnemy : MonoBehaviour
     {
         if (other.GetComponent<SpaceShooterProjectile>() != null)
         {
-            if (gameManager != null) gameManager.AddScore(10);
+            if (gameManager != null)
+            {
+                gameManager.AddScore(10);
+                gameManager.PlayExplosionSound();
+            }
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
