@@ -191,7 +191,7 @@ public static class FarAwayHomeBuildingBootstrap
         RoomLight(root.transform, new Vector3(5f, 2.85f, 3.2f));
         RoomLight(root.transform, new Vector3(0f, 2.9f, 0f));
 
-        BuildUpperFloor(root.transform, wall, trim, glass, cabinet, white, bedCover);
+        BuildUpperFloor(root.transform, wall, trim, floor, glass, cabinet, white, bedCover);
 
         // Small sign above the entrance.
         RoomSign(root.transform, "FAR AWAY HOME", new Vector3(0f, 2.55f, -7.08f), 0f);
@@ -200,7 +200,7 @@ public static class FarAwayHomeBuildingBootstrap
     }
 
 
-    private static void BuildUpperFloor(Transform parent, Material wall, Material trim,
+    private static void BuildUpperFloor(Transform parent, Material wall, Material trim, Material floor,
         Material glass, Material cabinet, Material white, Material bedCover)
     {
         Cube(parent, "Upper left outside wall", new Vector3(-8.9f, 5.05f, 0f), new Vector3(0.2f, 3.2f, 14f), wall);
