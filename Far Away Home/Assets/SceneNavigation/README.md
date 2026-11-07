@@ -2,6 +2,14 @@
 
 A small **SCENES** button is created automatically whenever a scene loads. It opens a panel that lets the player switch between the hub and available arcade games.
 
+## Controls
+
+- **F1** — open or close the scene navigation panel.
+- **SCENES button** — open or close the panel with the mouse or touchscreen.
+- **Escape** — close the panel.
+
+F1 is used instead of Tab so it does not conflict with the game's existing Tab control.
+
 ## Included destinations
 
 - `Main_Scene` — main hub
@@ -15,7 +23,7 @@ A small **SCENES** button is created automatically whenever a scene loads. It op
 3. Choose **Tools → Far Away Home → Configure Scene Navigation**.
 4. Check the Console for any scene names that could not be found.
 5. Save/commit the updated `ProjectSettings/EditorBuildSettings.asset`.
-6. Press Play in any of the three scenes. The **SCENES** button appears in the upper-right corner.
+6. Press Play in any of the three scenes. The **SCENES** button appears in the upper-right corner. Press **F1** to open the menu.
 
 The menu is bootstrapped at runtime, so it does not need to be manually placed in each scene. It uses a normal single-scene load, so the previous game is unloaded when switching.
 
