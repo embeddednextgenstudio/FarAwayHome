@@ -7,6 +7,9 @@ public class SpaceShooterGameManager : MonoBehaviour
     [SerializeField] private Text livesText;
     [SerializeField] private Text gameOverText;
     private AudioSource effectsSource;
+    private int score;
+    private int lives = 3;
+    public bool IsGameOver { get; private set; }
 
     private void Awake()
     {
@@ -22,23 +25,14 @@ public class SpaceShooterGameManager : MonoBehaviour
     public void PlayExplosionSound() { SpaceShooterAudio.PlayExplosion(effectsSource); }
     public void PlayPlayerHitSound() { SpaceShooterAudio.PlayHit(effectsSource); }
 
-    private int score;
-    private int lives = 3;
-    public bool IsGameOver { get; private set; }
-
     public void Configure(Text scoreLabel, Text livesLabel, Text gameOverLabel)
     {
-        scoreText = scoreLabel;
-        livesText = livesLabel;
-        gameOverText = gameOverLabel;
+        scoreText = scoreLabel; livesText = livesLabel; gameOverText = gameOverLabel;
         RefreshHud();
         if (gameOverText != null) gameOverText.gameObject.SetActive(false);
     }
 
-    private void Start()
-    {
-        RefreshHud();
-    }
+    private void Start() { RefreshHud(); }
 
     public void AddScore(int amount)
     {
@@ -52,7 +46,6 @@ public class SpaceShooterGameManager : MonoBehaviour
         if (IsGameOver) return;
         lives = Mathf.Max(0, lives - 1);
         RefreshHud();
-
         if (lives == 0)
         {
             IsGameOver = true;

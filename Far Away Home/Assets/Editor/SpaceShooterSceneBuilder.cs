@@ -26,11 +26,13 @@ public static class SpaceShooterSceneBuilder
         Material enemyMaterial = CreateMaterial("EnemyRed", new Color(1f, 0.16f, 0.18f), 0.2f);
         Material enemyWingMaterial = CreateMaterial("EnemyDark", new Color(0.42f, 0.025f, 0.06f), 0.2f);
         Material laserMaterial = CreateMaterial("LaserCyan", new Color(0.15f, 1f, 0.95f), 0.7f, true);
+        Material rocketMaterial = CreateMaterial("FireworksRocket", new Color(1f, 0.25f, 0.8f), 0.6f, true);
         Material starMaterial = CreateMaterial("StarWhite", new Color(0.75f, 0.88f, 1f), 0f, true);
 
         GameObject projectilePrefab = BuildProjectile(laserMaterial);
+        GameObject rocketPrefab = BuildRocket(rocketMaterial);
         GameObject enemyPrefab = BuildEnemy(enemyMaterial, enemyWingMaterial);
-        GameObject playerPrefab = BuildPlayer(playerMaterial, wingMaterial, projectilePrefab);
+        GameObject playerPrefab = BuildPlayer(playerMaterial, wingMaterial, projectilePrefab, rocketPrefab);
 
         Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Additive);
         SceneManager.SetActiveScene(scene);
@@ -90,7 +92,25 @@ public static class SpaceShooterSceneBuilder
         return prefab;
     }
 
-    private static GameObject BuildPlayer(Material bodyMaterial, Material wingMaterial, GameObject projectilePrefab)
+    private static GameObject BuildRocket(Material material)
+    {
+        GameObject root = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+        root.name = "Fireworks Rocket";
+        root.transform.localScale = new Vector3(0.2f, 0.38f, 0.2f);
+        root.GetComponent<Renderer>().sharedMaterial = material;
+        Object.DestroyImmediate(root.GetComponent<Collider>());
+        SphereCollider collider = root.AddComponent<SphereCollider>();
+        collider.isTrigger = true;
+        Rigidbody body = root.AddComponent<Rigidbody>();
+        body.useGravity = false;
+        body.isKinematic = true;
+        root.AddComponent<FireworksRocket>();
+        GameObject prefab = PrefabUtility.SaveAsPrefabAsset(root, PrefabFolder + "/FireworksRocket.prefab");
+        Object.DestroyImmediate(root);
+        return prefab;
+    }
+
+    private static GameObject BuildPlayer(Material bodyMaterial, Material wingMaterial, GameObject projectilePrefab, GameObject rocketPrefab)
     {
         GameObject root = new GameObject("PlayerShip");
         AddVisual(root.transform, PrimitiveType.Sphere, "Hull", new Vector3(0f, 0f, 0f), new Vector3(0.52f, 1.05f, 0.28f), bodyMaterial);
@@ -104,6 +124,7 @@ public static class SpaceShooterSceneBuilder
         body.isKinematic = true;
         SpaceShooterPlayer player = root.AddComponent<SpaceShooterPlayer>();
         player.SetProjectilePrefab(projectilePrefab);
+        player.SetFireworksRocketPrefab(rocketPrefab);
 
         string path = PrefabFolder + "/PlayerShip.prefab";
         GameObject prefab = PrefabUtility.SaveAsPrefabAsset(root, path);
@@ -196,9 +217,9 @@ public static class SpaceShooterSceneBuilder
         gameOverText.color = new Color(1f, 0.35f, 0.35f);
         gameOverText.gameObject.SetActive(false);
 
-        CreateLabel(canvasObject.transform, "Controls", "MOVE  WASD / ARROWS     FIRE  SPACE / CLICK",
+        CreateLabel(canvasObject.transform, "Controls", "MOVE WASD / ARROWS   LASER SPACE / CLICK   SPREAD 2   FIREWORKS ROCKET X",
             font, new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0f, 24f),
-            new Vector2(900f, 48f), 22, TextAnchor.MiddleCenter);
+            new Vector2(1500f, 48f), 20, TextAnchor.MiddleCenter);
 
         return canvas;
     }
