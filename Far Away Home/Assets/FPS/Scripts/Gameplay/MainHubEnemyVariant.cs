@@ -19,9 +19,16 @@ namespace Unity.FPS.Gameplay
         }
 
         public VariantType Variant = VariantType.Scout;
+        bool m_Applied;
 
-        void Awake()
+        // Apply after the FPS framework's Start methods, which initialize health and
+        // copy navigation settings from NavigationModule onto the NavMeshAgent.
+        void LateUpdate()
         {
+            if (m_Applied)
+                return;
+
+            m_Applied = true;
             Health health = GetComponent<Health>();
             NavMeshAgent agent = GetComponent<NavMeshAgent>();
             DetectionModule detection = GetComponentInChildren<DetectionModule>(true);
@@ -30,7 +37,11 @@ namespace Unity.FPS.Gameplay
             switch (Variant)
             {
                 case VariantType.Scout:
-                    if (health) health.MaxHealth = 65f;
+                    if (health)
+                    {
+                        health.MaxHealth = 65f;
+                        health.CurrentHealth = health.MaxHealth;
+                    }
                     if (agent) agent.speed *= 1.45f;
                     if (detection)
                     {
@@ -41,14 +52,22 @@ namespace Unity.FPS.Gameplay
                     break;
 
                 case VariantType.Heavy:
-                    if (health) health.MaxHealth = 220f;
+                    if (health)
+                    {
+                        health.MaxHealth = 220f;
+                        health.CurrentHealth = health.MaxHealth;
+                    }
                     if (agent) agent.speed *= 0.65f;
                     if (detection) detection.AttackRange *= 1.15f;
                     if (weapon) weapon.DelayBetweenShots *= 1.35f;
                     break;
 
                 case VariantType.Veteran:
-                    if (health) health.MaxHealth = 145f;
+                    if (health)
+                    {
+                        health.MaxHealth = 145f;
+                        health.CurrentHealth = health.MaxHealth;
+                    }
                     if (agent) agent.speed *= 1.1f;
                     if (detection)
                     {
