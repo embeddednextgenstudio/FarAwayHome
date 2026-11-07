@@ -20,11 +20,11 @@ public static class SceneNavigationBuildSettings
     [MenuItem("Tools/Far Away Home/Configure Scene Navigation")]
     public static void Configure()
     {
-        Dictionary<string, EditorBuildSettingsScene> scenesByPath =
-            new Dictionary<string, EditorBuildSettingsScene>();
-
-        foreach (EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
-            scenesByPath[scene.path] = scene;
+        List<EditorBuildSettingsScene> scenes = new List<EditorBuildSettingsScene>(
+            EditorBuildSettings.scenes);
+        HashSet<string> knownPaths = new HashSet<string>();
+        foreach (EditorBuildSettingsScene scene in scenes)
+            knownPaths.Add(scene.path);
 
         List<string> missing = new List<string>();
 
@@ -49,12 +49,25 @@ public static class SceneNavigationBuildSettings
                 continue;
             }
 
-            scenesByPath[matchingPath] =
-                new EditorBuildSettingsScene(matchingPath, true);
+            if (knownPaths.Contains(matchingPath))
+            {
+                for (int i = 0; i < scenes.Count; i++)
+                {
+                    if (scenes[i].path == matchingPath)
+                    {
+                        scenes[i] = new EditorBuildSettingsScene(matchingPath, true);
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                scenes.Add(new EditorBuildSettingsScene(matchingPath, true));
+                knownPaths.Add(matchingPath);
+            }
         }
 
-        EditorBuildSettings.scenes = new List<EditorBuildSettingsScene>(
-            scenesByPath.Values).ToArray();
+        EditorBuildSettings.scenes = scenes.ToArray();
 
         if (missing.Count > 0)
         {
