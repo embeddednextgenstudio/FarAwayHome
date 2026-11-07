@@ -1,3 +1,4 @@
+using Unity.FPS.AI;
 using Unity.FPS.Game;
 using UnityEngine;
 using UnityEngine.AI;
