@@ -12,7 +12,7 @@ public class SpaceShooterPlayer : MonoBehaviour
     [SerializeField] private float verticalLimit = 4.3f;
 
     private float nextFireTime;
-    private SpaceShooterGameManager gameManager;
+    [SerializeField] private SpaceShooterGameManager gameManager;
 
     public void Initialize(SpaceShooterGameManager manager)
     {
