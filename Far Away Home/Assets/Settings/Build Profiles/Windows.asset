@@ -29,11 +29,11 @@ MonoBehaviour:
     m_path: Assets/Main_Scene.unity
     m_guid: ddf2a1bf6bcb1084390a3c1aa6a19bad
   - m_enabled: 1
-    m_path: Assets/Space_Shooter_Arcade_Game.unity
-    m_guid: bf917ddd823f95144b9a3d632d2f9159
-  - m_enabled: 1
     m_path: Assets/Arcade_Mini_Game.unity
     m_guid: 0854c27cd9fa02a41ad2eac9adf8f1e6
+  - m_enabled: 1
+    m_path: Assets/Space_Shooter_Arcade_Game.unity
+    m_guid: bf917ddd823f95144b9a3d632d2f9159
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
