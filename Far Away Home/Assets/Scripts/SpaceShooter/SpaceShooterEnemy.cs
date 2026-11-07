@@ -28,13 +28,13 @@ public class SpaceShooterEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("PlayerProjectile"))
+        if (other.GetComponent<SpaceShooterProjectile>() != null)
         {
             if (gameManager != null) gameManager.AddScore(10);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
-        else if (other.CompareTag("Player"))
+        else if (other.GetComponent<SpaceShooterPlayer>() != null)
         {
             SpaceShooterPlayer player = other.GetComponent<SpaceShooterPlayer>();
             if (player != null) player.TakeHit();
