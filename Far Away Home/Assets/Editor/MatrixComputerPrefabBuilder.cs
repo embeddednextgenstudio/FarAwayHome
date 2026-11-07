@@ -113,7 +113,7 @@ public static class MatrixComputerPrefabBuilder
 
     private static void AddMatrixColumns(Transform screen)
     {
-        Font font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+        Font font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
 
         const int columnCount = 17;
         for (int i = 0; i < columnCount; i++)
