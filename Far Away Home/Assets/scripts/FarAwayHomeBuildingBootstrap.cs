@@ -81,8 +81,12 @@ public static class FarAwayHomeBuildingBootstrap
         // Main shell: 18 x 14 metres, with a clear front entrance.
         Cube(root.transform, "Oak floor", new Vector3(0f, 0.08f, 0f),
             new Vector3(18f, 0.16f, 14f), floor);
-        Cube(root.transform, "Ceiling", new Vector3(0f, 3.25f, 0f),
-            new Vector3(18f, 0.2f, 14f), ceiling);
+        // Upper-storey floor panels leave an opening for the staircase.
+        Cube(root.transform, "Upper floor left panel", new Vector3(-4.9f, 3.35f, 0f), new Vector3(8.2f, 0.2f, 14f), floor);
+        Cube(root.transform, "Upper floor right panel", new Vector3(4.9f, 3.35f, 0f), new Vector3(8.2f, 0.2f, 14f), floor);
+        Cube(root.transform, "Upper floor front panel", new Vector3(0f, 3.35f, -4.2f), new Vector3(1.6f, 0.2f, 5.6f), floor);
+        Cube(root.transform, "Upper floor rear panel", new Vector3(0f, 3.35f, 3.8f), new Vector3(1.6f, 0.2f, 6.4f), floor);
+        Cube(root.transform, "Second floor ceiling", new Vector3(0f, 6.65f, 0f), new Vector3(18f, 0.2f, 14f), ceiling);
 
         Cube(root.transform, "Left outside wall", new Vector3(-8.9f, 1.6f, 0f),
             new Vector3(0.2f, 3.2f, 14f), wall);
@@ -187,10 +191,98 @@ public static class FarAwayHomeBuildingBootstrap
         RoomLight(root.transform, new Vector3(5f, 2.85f, 3.2f));
         RoomLight(root.transform, new Vector3(0f, 2.9f, 0f));
 
+        BuildUpperFloor(root.transform, wall, trim, glass, cabinet, white, bedCover);
+
         // Small sign above the entrance.
         RoomSign(root.transform, "FAR AWAY HOME", new Vector3(0f, 2.55f, -7.08f), 0f);
 
         Debug.Log("FarAwayHome: generated an enterable house with four rooms and a connecting hall.");
+    }
+
+
+    private static void BuildUpperFloor(Transform parent, Material wall, Material trim,
+        Material glass, Material cabinet, Material white, Material bedCover)
+    {
+        Cube(parent, "Upper left outside wall", new Vector3(-8.9f, 5.05f, 0f), new Vector3(0.2f, 3.2f, 14f), wall);
+        Cube(parent, "Upper right outside wall", new Vector3(8.9f, 5.05f, 0f), new Vector3(0.2f, 3.2f, 14f), wall);
+        Cube(parent, "Upper back outside wall", new Vector3(0f, 5.05f, 6.9f), new Vector3(18f, 3.2f, 0.2f), wall);
+        Cube(parent, "Upper front outside wall", new Vector3(0f, 5.05f, -6.9f), new Vector3(18f, 3.2f, 0.2f), wall);
+
+        BuildUpperHallPartition(parent, -1.25f, wall, trim);
+        BuildUpperHallPartition(parent, 1.25f, wall, trim);
+        Cube(parent, "Upper left room divider", new Vector3(-5f, 5.05f, 0f), new Vector3(7.6f, 3.2f, 0.2f), wall);
+        Cube(parent, "Upper right room divider", new Vector3(5f, 5.05f, 0f), new Vector3(7.6f, 3.2f, 0.2f), wall);
+
+        // Fourteen shallow steps rise through the central hall into the upper landing.
+        const int stepCount = 14;
+        const float stepRise = 3.36f / stepCount;
+        const float stepDepth = 5.6f / stepCount;
+        for (int i = 0; i < stepCount; i++)
+        {
+            float top = stepRise * (i + 1);
+            float z = -6f + stepDepth * (i + 0.5f);
+            Cube(parent, "Stair step " + (i + 1), new Vector3(0f, top - stepRise * 0.5f, z),
+                new Vector3(1.12f, stepRise, stepDepth + 0.025f), trim);
+        }
+
+        GameObject railLeft = Cube(parent, "Stair handrail left", new Vector3(-0.68f, 1.85f, -3.2f),
+            new Vector3(0.1f, 0.12f, 5.9f), trim);
+        railLeft.transform.localRotation = Quaternion.Euler(-31f, 0f, 0f);
+        GameObject railRight = Cube(parent, "Stair handrail right", new Vector3(0.68f, 1.85f, -3.2f),
+            new Vector3(0.1f, 0.12f, 5.9f), trim);
+        railRight.transform.localRotation = Quaternion.Euler(-31f, 0f, 0f);
+
+        RoomSign(parent, "GUEST BEDROOM", new Vector3(-5f, 5.9f, -6.77f), 0f);
+        RoomSign(parent, "STUDY", new Vector3(5f, 5.9f, -6.77f), 0f);
+        RoomSign(parent, "LIBRARY", new Vector3(-5f, 5.9f, 6.77f), 180f);
+        RoomSign(parent, "HOBBY ROOM", new Vector3(5f, 5.9f, 6.77f), 180f);
+        RoomSign(parent, "UPPER HALL", new Vector3(0f, 5.9f, 1.2f), 180f);
+
+        Cube(parent, "Guest bed frame", new Vector3(-5f, 3.85f, -3.3f), new Vector3(3f, 0.45f, 3.6f), trim);
+        Cube(parent, "Guest mattress", new Vector3(-5f, 4.15f, -3.3f), new Vector3(2.9f, 0.25f, 3.5f), white);
+        Cube(parent, "Guest bed cover", new Vector3(-5f, 4.3f, -2.7f), new Vector3(2.85f, 0.08f, 2.1f), bedCover);
+        Cube(parent, "Study desk", new Vector3(5f, 4f, -4.9f), new Vector3(3.4f, 0.15f, 1.4f), cabinet);
+        Cube(parent, "Study desk legs", new Vector3(5f, 3.7f, -4.9f), new Vector3(3.1f, 0.6f, 1.1f), trim);
+        Cube(parent, "Study bookcase", new Vector3(7.6f, 4.8f, -1.5f), new Vector3(1.1f, 2.4f, 0.45f), cabinet);
+        Cube(parent, "Library shelf", new Vector3(-7.5f, 4.8f, 3.6f), new Vector3(1.2f, 2.4f, 3.8f), cabinet);
+        Cube(parent, "Hobby work table", new Vector3(5f, 4f, 3.5f), new Vector3(3.6f, 0.15f, 2f), cabinet);
+        Cube(parent, "Hobby storage", new Vector3(7.5f, 4.4f, 5.5f), new Vector3(1f, 1.4f, 1.5f), trim);
+
+        Window(parent, new Vector3(-8.77f, 5.2f, -3.3f), new Vector3(0.06f, 1.1f, 2.1f), glass, trim);
+        Window(parent, new Vector3(8.77f, 5.2f, -3.3f), new Vector3(0.06f, 1.1f, 2.1f), glass, trim);
+        Window(parent, new Vector3(-8.77f, 5.2f, 3.3f), new Vector3(0.06f, 1.1f, 2.1f), glass, trim);
+        Window(parent, new Vector3(8.77f, 5.2f, 3.3f), new Vector3(0.06f, 1.1f, 2.1f), glass, trim);
+
+        RoomLight(parent, new Vector3(-5f, 6f, -3.2f));
+        RoomLight(parent, new Vector3(5f, 6f, -3.2f));
+        RoomLight(parent, new Vector3(-5f, 6f, 3.2f));
+        RoomLight(parent, new Vector3(5f, 6f, 3.2f));
+        RoomLight(parent, new Vector3(0f, 6f, 1.5f));
+    }
+
+    private static void BuildUpperHallPartition(Transform parent, float x, Material wall, Material trim)
+    {
+        const float gap = 0.85f;
+        const float firstDoor = -4.2f;
+        const float secondDoor = 4.2f;
+        const float zMin = -6.8f;
+        const float zMax = 6.8f;
+        UpperWallZ(parent, "Upper hall partition front", x, (zMin + firstDoor - gap) * 0.5f, (firstDoor - gap) - zMin, wall);
+        UpperWallZ(parent, "Upper hall partition middle", x, 0f, (secondDoor - gap) - (firstDoor + gap), wall);
+        UpperWallZ(parent, "Upper hall partition rear", x, (secondDoor + gap + zMax) * 0.5f, zMax - (secondDoor + gap), wall);
+
+        foreach (float doorZ in new float[] { firstDoor, secondDoor })
+        {
+            Cube(parent, "Upper door frame front", new Vector3(x, 4.9f, doorZ - gap), new Vector3(0.28f, 2.9f, 0.12f), trim);
+            Cube(parent, "Upper door frame rear", new Vector3(x, 4.9f, doorZ + gap), new Vector3(0.28f, 2.9f, 0.12f), trim);
+            Cube(parent, "Upper door lintel", new Vector3(x, 6.35f, doorZ), new Vector3(0.28f, 0.18f, 1.7f), trim);
+        }
+    }
+
+    private static void UpperWallZ(Transform parent, string name, float x, float z, float length, Material material)
+    {
+        if (length <= 0.05f) return;
+        Cube(parent, name, new Vector3(x, 5.05f, z), new Vector3(0.2f, 3.2f, length), material);
     }
 
     private static void BuildHallPartition(Transform parent, float x, Material material)
