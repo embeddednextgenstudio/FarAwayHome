@@ -69,7 +69,7 @@ public static class MatrixComputerPrefabBuilder
             for (int column = 0; column < keysInRow; column++)
             {
                 float x = startX + column * spacing;
-                float z = -0.75f + row * 0.105f;
+                float z = -0.43f - row * 0.105f;
                 CreateCube(root.transform, "Key " + row + "-" + column,
                     new Vector3(x, 0.25f, z),
                     new Vector3(row == 3 ? 0.105f : 0.075f, 0.025f, 0.065f),
@@ -78,7 +78,7 @@ public static class MatrixComputerPrefabBuilder
         }
 
         CreateCube(root.transform, "Space Bar",
-            new Vector3(0f, 0.25f, -0.43f), new Vector3(0.48f, 0.025f, 0.065f), keyMaterial);
+            new Vector3(0f, 0.25f, -0.78f), new Vector3(0.48f, 0.025f, 0.065f), keyMaterial);
 
         // Mouse.
         GameObject mouse = GameObject.CreatePrimitive(PrimitiveType.Sphere);
@@ -90,7 +90,7 @@ public static class MatrixComputerPrefabBuilder
         RemoveCollider(mouse);
 
         // Small status light on the lower bezel.
-        GameObject statusLight = CreateCube(root.transform, "Power LED",
+        CreateCube(root.transform, "Power LED",
             new Vector3(0.78f, 0.91f, -0.085f), new Vector3(0.035f, 0.035f, 0.012f),
             GetOrCreateMaterial(MaterialFolder + "/Power_LED.mat",
                 new Color(0.08f, 1f, 0.32f), 1.5f));
@@ -143,7 +143,7 @@ public static class MatrixComputerPrefabBuilder
 
     private static string MakePreviewText()
     {
-        const string characters = "01ABCDEFアイウエオカキクケコ";
+        const string characters = "01ABCDEF#$%&*+-=<>";
         System.Text.StringBuilder builder = new System.Text.StringBuilder();
 
         for (int i = 0; i < 11; i++)
