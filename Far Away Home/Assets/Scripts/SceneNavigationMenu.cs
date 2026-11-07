@@ -29,7 +29,20 @@ public sealed class SceneNavigationMenu : MonoBehaviour
         SceneManager.sceneLoaded += HandleSceneLoaded;
     }
 
+    // The first scene can finish loading before the sceneLoaded subscription is
+    // active. Explicitly bootstrap after startup as well as on later scene loads.
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private static void EnsureStartupSceneHasMenu()
+    {
+        EnsureMenuExists();
+    }
+
     private static void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        EnsureMenuExists();
+    }
+
+    private static void EnsureMenuExists()
     {
         if (FindObjectOfType<SceneNavigationMenu>() != null) return;
 
