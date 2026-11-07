@@ -73,25 +73,25 @@ public sealed class CyberpunkAtmosphere : MonoBehaviour
         tonemapping.mode.value = TonemappingMode.ACES;
 
         var colorAdjustments = runtimeProfile.Add<ColorAdjustments>(true);
-        colorAdjustments.postExposure.value = -0.15f;
-        colorAdjustments.contrast.value = 22f;
-        colorAdjustments.saturation.value = 12f;
-        colorAdjustments.colorFilter.value = new Color(0.84f, 0.92f, 1f, 1f);
+        colorAdjustments.postExposure.value = 0.45f;
+        colorAdjustments.contrast.value = 12f;
+        colorAdjustments.saturation.value = 18f;
+        colorAdjustments.colorFilter.value = new Color(0.92f, 0.97f, 1f, 1f);
 
         var splitToning = runtimeProfile.Add<SplitToning>(true);
-        splitToning.shadows.value = new Color(0.04f, 0.22f, 0.34f, 1f);
+        splitToning.shadows.value = new Color(0.08f, 0.20f, 0.28f, 1f);
         splitToning.highlights.value = new Color(0.38f, 0.18f, 0.40f, 1f);
         splitToning.balance.value = 15f;
 
         var bloom = runtimeProfile.Add<Bloom>(true);
-        bloom.threshold.value = 1.15f;
-        bloom.intensity.value = 0.85f;
+        bloom.threshold.value = 1.3f;
+        bloom.intensity.value = 0.65f;
         bloom.scatter.value = 0.72f;
         bloom.tint.value = new Color(0.62f, 0.84f, 1f, 1f);
 
         var vignette = runtimeProfile.Add<Vignette>(true);
         vignette.color.value = new Color(0.015f, 0.01f, 0.045f, 1f);
-        vignette.intensity.value = 0.27f;
+        vignette.intensity.value = 0.14f;
         vignette.smoothness.value = 0.48f;
         vignette.rounded.value = true;
 
@@ -99,7 +99,7 @@ public sealed class CyberpunkAtmosphere : MonoBehaviour
         chromaticAberration.intensity.value = 0.035f;
 
         var filmGrain = runtimeProfile.Add<FilmGrain>(true);
-        filmGrain.intensity.value = 0.12f;
+        filmGrain.intensity.value = 0.06f;
         filmGrain.response.value = 0.8f;
 
         globalVolume = gameObject.AddComponent<Volume>();
