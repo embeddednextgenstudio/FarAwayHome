@@ -189,8 +189,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpaceShooterPlayer
   projectilePrefab: {fileID: 7437960552400981203, guid: d5513479f6152034089b3b138af897db, type: 3}
+  fireworksRocketPrefab: {fileID: 495113117430321926, guid: 59d8a31dcf8c1ad4783ce7f2ce1b782a, type: 3}
   moveSpeed: 8
   fireInterval: 0.22
+  rocketCooldown: 7
   horizontalLimit: 8
   verticalLimit: 4.3
   gameManager: {fileID: 0}
