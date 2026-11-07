@@ -95,7 +95,7 @@ public static class SpaceShooterSceneBuilder
         AddVisual(root.transform, PrimitiveType.Sphere, "Hull", new Vector3(0f, 0f, 0f), new Vector3(0.52f, 1.05f, 0.28f), bodyMaterial);
         AddVisual(root.transform, PrimitiveType.Cube, "Left Wing", new Vector3(-0.62f, -0.18f, 0f), new Vector3(0.78f, 0.18f, 0.2f), wingMaterial, 0f, 0f, -18f);
         AddVisual(root.transform, PrimitiveType.Cube, "Right Wing", new Vector3(0.62f, -0.18f, 0f), new Vector3(0.78f, 0.18f, 0.2f), wingMaterial, 0f, 0f, 18f);
-        AddVisual(root.transform, PrimitiveType.Cone, "Nose", new Vector3(0f, 0.72f, 0f), new Vector3(0.3f, 0.55f, 0.25f), bodyMaterial);
+        AddVisual(root.transform, PrimitiveType.Sphere, "Nose", new Vector3(0f, 0.72f, 0f), new Vector3(0.3f, 0.55f, 0.25f), bodyMaterial);
         BoxCollider collider = root.AddComponent<BoxCollider>();
         collider.size = new Vector3(1.55f, 1.9f, 0.5f);
         Rigidbody body = root.AddComponent<Rigidbody>();
@@ -116,7 +116,7 @@ public static class SpaceShooterSceneBuilder
         AddVisual(root.transform, PrimitiveType.Sphere, "Hull", Vector3.zero, new Vector3(0.62f, 0.72f, 0.3f), bodyMaterial);
         AddVisual(root.transform, PrimitiveType.Cube, "Left Wing", new Vector3(-0.58f, 0.08f, 0f), new Vector3(0.72f, 0.16f, 0.2f), wingMaterial, 0f, 0f, 20f);
         AddVisual(root.transform, PrimitiveType.Cube, "Right Wing", new Vector3(0.58f, 0.08f, 0f), new Vector3(0.72f, 0.16f, 0.2f), wingMaterial, 0f, 0f, -20f);
-        AddVisual(root.transform, PrimitiveType.Cone, "Tail", new Vector3(0f, -0.5f, 0f), new Vector3(0.28f, 0.4f, 0.22f), wingMaterial, 0f, 0f, 180f);
+        AddVisual(root.transform, PrimitiveType.Sphere, "Tail", new Vector3(0f, -0.5f, 0f), new Vector3(0.28f, 0.4f, 0.22f), wingMaterial, 0f, 0f, 180f);
         CapsuleCollider collider = root.AddComponent<CapsuleCollider>();
         collider.isTrigger = true;
         collider.radius = 0.58f;
