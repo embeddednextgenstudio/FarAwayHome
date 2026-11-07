@@ -60,11 +60,11 @@ public static class MatrixComputerPrefabBuilder
         CreateCube(root.transform, "Keyboard Body",
             new Vector3(0f, 0.19f, -0.58f), new Vector3(1.52f, 0.09f, 0.48f), caseMaterial);
 
-        for (int row = 0; row < 4; row++)
+        for (int row = 0; row < 3; row++)
         {
-            int keysInRow = row == 3 ? 10 : 14;
-            float startX = row == 3 ? -0.57f : -0.66f;
-            float spacing = row == 3 ? 0.127f : 0.096f;
+            int keysInRow = row == 2 ? 10 : 14;
+            float startX = row == 2 ? -0.57f : -0.66f;
+            float spacing = row == 2 ? 0.127f : 0.096f;
 
             for (int column = 0; column < keysInRow; column++)
             {
@@ -72,7 +72,7 @@ public static class MatrixComputerPrefabBuilder
                 float z = -0.43f - row * 0.105f;
                 CreateCube(root.transform, "Key " + row + "-" + column,
                     new Vector3(x, 0.25f, z),
-                    new Vector3(row == 3 ? 0.105f : 0.075f, 0.025f, 0.065f),
+                    new Vector3(row == 2 ? 0.105f : 0.075f, 0.025f, 0.065f),
                     keyMaterial);
             }
         }
