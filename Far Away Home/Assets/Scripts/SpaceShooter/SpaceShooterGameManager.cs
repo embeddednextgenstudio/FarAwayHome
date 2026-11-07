@@ -6,6 +6,21 @@ public class SpaceShooterGameManager : MonoBehaviour
     [SerializeField] private Text scoreText;
     [SerializeField] private Text livesText;
     [SerializeField] private Text gameOverText;
+    private AudioSource effectsSource;
+
+    private void Awake()
+    {
+        effectsSource = GetComponent<AudioSource>();
+        if (effectsSource == null) effectsSource = gameObject.AddComponent<AudioSource>();
+        effectsSource.playOnAwake = false;
+        effectsSource.loop = false;
+        effectsSource.spatialBlend = 0f;
+        effectsSource.volume = 0.8f;
+    }
+
+    public void PlayLaserSound() { SpaceShooterAudio.PlayLaser(effectsSource); }
+    public void PlayExplosionSound() { SpaceShooterAudio.PlayExplosion(effectsSource); }
+    public void PlayPlayerHitSound() { SpaceShooterAudio.PlayHit(effectsSource); }
 
     private int score;
     private int lives = 3;
