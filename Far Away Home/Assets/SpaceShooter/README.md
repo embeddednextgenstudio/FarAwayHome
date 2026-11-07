@@ -24,10 +24,11 @@ The editor builder generates the ship prefabs and materials under `Assets/SpaceS
 - Red enemy ships that spawn above the play area and chase the player
 - Enemy destruction and score increments
 - Three hull points and a game-over message
+- Synthesized laser, enemy explosion, and player damage sound effects
 - Starfield, camera, lighting, and a simple HUD
 
 ## Notes
 
-- The scene is intentionally built from Unity primitive meshes, so it does not need external art assets.
+- The scene is intentionally built from Unity primitive meshes, so it does not need external art or audio assets. Laser, explosion, and damage sounds are synthesized at runtime.
 - The scene builder creates a standalone test scene. Add it to Build Settings only when you decide you want it included in a build.
 - This change has not been run in the Unity Editor from this workspace. Please test the generated scene locally and share any Console errors before merging it into your main branch.

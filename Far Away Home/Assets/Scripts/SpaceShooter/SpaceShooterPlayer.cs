@@ -65,11 +65,16 @@ public class SpaceShooterPlayer : MonoBehaviour
 
         Vector3 spawnPosition = transform.position + Vector3.up * 0.95f;
         Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
+        if (gameManager != null) gameManager.PlayLaserSound();
     }
 
     public void TakeHit()
     {
-        if (gameManager != null) gameManager.LoseLife();
+        if (gameManager != null)
+        {
+            gameManager.PlayPlayerHitSound();
+            gameManager.LoseLife();
+        }
     }
 
     public void SetProjectilePrefab(GameObject prefab)
