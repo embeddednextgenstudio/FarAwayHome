@@ -19,6 +19,8 @@ public sealed class SceneNavigationMenu : MonoBehaviour
     private const string MenuTitle = "TRAVEL / ARCADE";
     private Canvas canvas;
     private GameObject panel;
+    private Button[] sceneButtons;
+    private int selectedSceneIndex;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void RegisterForSceneLoads()
@@ -43,9 +45,25 @@ public sealed class SceneNavigationMenu : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F1))
-            panel.SetActive(!panel.activeSelf);
+        {
+            bool shouldOpen = !panel.activeSelf;
+            panel.SetActive(shouldOpen);
+            if (shouldOpen)
+                SelectFirstAvailableScene();
+        }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && panel.activeSelf)
+        if (!panel.activeSelf) return;
+
+        if (Input.GetKeyDown(KeyCode.F2))
+            SelectNextScene();
+
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            if (sceneButtons != null && sceneButtons[selectedSceneIndex].interactable)
+                sceneButtons[selectedSceneIndex].onClick.Invoke();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
             panel.SetActive(false);
     }
 
@@ -69,7 +87,12 @@ public sealed class SceneNavigationMenu : MonoBehaviour
         Button toggle = CreateButton(canvasObject.transform, "SCENES", font,
             new Vector2(1f, 1f), new Vector2(1f, 1f),
             new Vector2(-24f, -24f), new Vector2(190f, 58f), 22);
-        toggle.onClick.AddListener(() => panel.SetActive(!panel.activeSelf));
+        toggle.onClick.AddListener(() =>
+        {
+            panel.SetActive(!panel.activeSelf);
+            if (panel.activeSelf)
+                SelectFirstAvailableScene();
+        });
 
         panel = new GameObject("Scene Navigation Panel");
         panel.transform.SetParent(canvasObject.transform, false);
@@ -92,8 +115,9 @@ public sealed class SceneNavigationMenu : MonoBehaviour
         layout.childForceExpandHeight = false;
 
         CreateHeading(panel.transform, MenuTitle, font);
-        CreateHeading(panel.transform, "Choose a destination", font);
+        CreateHeading(panel.transform, "F2: SELECT   ENTER: LOAD", font);
 
+        sceneButtons = new Button[AvailableScenes.Length];
         for (int i = 0; i < AvailableScenes.Length; i++)
         {
             string sceneName = AvailableScenes[i];
@@ -105,12 +129,41 @@ public sealed class SceneNavigationMenu : MonoBehaviour
             string targetScene = sceneName;
             sceneButton.interactable = Application.CanStreamedLevelBeLoaded(targetScene);
             sceneButton.onClick.AddListener(() => LoadScene(targetScene));
+            sceneButtons[i] = sceneButton;
         }
 
         Button closeButton = CreatePanelButton(panel.transform, "CLOSE", font);
         closeButton.onClick.AddListener(() => panel.SetActive(false));
 
         panel.SetActive(false);
+    }
+
+    private void SelectFirstAvailableScene()
+    {
+        selectedSceneIndex = 0;
+        SelectNextInteractable(1, true);
+    }
+
+    private void SelectNextScene()
+    {
+        SelectNextInteractable(1, false);
+    }
+
+    private void SelectNextInteractable(int direction, bool includeCurrent)
+    {
+        if (sceneButtons == null || sceneButtons.Length == 0) return;
+
+        int start = includeCurrent ? selectedSceneIndex - 1 : selectedSceneIndex;
+        for (int step = 1; step <= sceneButtons.Length; step++)
+        {
+            int candidate = (start + step * direction + sceneButtons.Length) % sceneButtons.Length;
+            if (!sceneButtons[candidate].interactable) continue;
+
+            selectedSceneIndex = candidate;
+            EventSystem.current?.SetSelectedGameObject(sceneButtons[candidate].gameObject);
+            sceneButtons[candidate].Select();
+            return;
+        }
     }
 
     private static void LoadScene(string sceneName)
