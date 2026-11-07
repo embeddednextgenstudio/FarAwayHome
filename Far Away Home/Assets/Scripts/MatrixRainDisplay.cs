@@ -13,7 +13,7 @@ public class MatrixRainDisplay : MonoBehaviour
     private TextMesh[] columns;
 
     private const string Characters =
-        "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&*+-=<>アイウエオカキクケコサシスセソタチツテト";
+        "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&*+-=<>";
 
     private void Start()
     {
