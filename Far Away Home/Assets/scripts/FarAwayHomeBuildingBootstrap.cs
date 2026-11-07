@@ -107,6 +107,12 @@ public static class FarAwayHomeBuildingBootstrap
         BuildHallPartition(root.transform, -1.25f, wall);
         BuildHallPartition(root.transform, 1.25f, wall);
 
+        // Split the left and right wings into two distinct rooms each.
+        Cube(root.transform, "Left room divider", new Vector3(-5f, 1.6f, 0f),
+            new Vector3(7.6f, 3.2f, 0.2f), wall);
+        Cube(root.transform, "Right room divider", new Vector3(5f, 1.6f, 0f),
+            new Vector3(7.6f, 3.2f, 0.2f), wall);
+
         // Simple windows on the outer walls.
         Window(root.transform, new Vector3(-8.77f, 2.0f, -3.3f), new Vector3(0.06f, 1.1f, 2.1f), glass, trim);
         Window(root.transform, new Vector3(8.77f, 2.0f, -3.3f), new Vector3(0.06f, 1.1f, 2.1f), glass, trim);
