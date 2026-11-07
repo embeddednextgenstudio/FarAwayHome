@@ -84,7 +84,7 @@ public static class FarAwayHomeBuildingBootstrap
         // Upper-storey floor panels leave an opening for the staircase.
         Cube(root.transform, "Upper floor left panel", new Vector3(-4.9f, 3.35f, 0f), new Vector3(8.2f, 0.2f, 14f), floor);
         Cube(root.transform, "Upper floor right panel", new Vector3(4.9f, 3.35f, 0f), new Vector3(8.2f, 0.2f, 14f), floor);
-        Cube(root.transform, "Upper floor front panel", new Vector3(0f, 3.35f, -4.2f), new Vector3(1.6f, 0.2f, 5.6f), floor);
+        // Keep the central strip open from the entrance through to the upper landing.
         Cube(root.transform, "Upper floor rear panel", new Vector3(0f, 3.35f, 3.8f), new Vector3(1.6f, 0.2f, 6.4f), floor);
         Cube(root.transform, "Second floor ceiling", new Vector3(0f, 6.65f, 0f), new Vector3(18f, 0.2f, 14f), ceiling);
 
@@ -224,6 +224,7 @@ public static class FarAwayHomeBuildingBootstrap
             Cube(parent, "Stair step " + (i + 1), new Vector3(0f, top - stepRise * 0.5f, z),
                 new Vector3(1.12f, stepRise, stepDepth + 0.025f), trim);
         }
+        Cube(parent, "Upper stair landing", new Vector3(0f, 3.35f, 0.2f), new Vector3(1.6f, 0.2f, 1.2f), floor);
 
         GameObject railLeft = Cube(parent, "Stair handrail left", new Vector3(-0.68f, 1.85f, -3.2f),
             new Vector3(0.1f, 0.12f, 5.9f), trim);
