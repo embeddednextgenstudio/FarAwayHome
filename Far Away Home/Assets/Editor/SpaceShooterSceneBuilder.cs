@@ -32,7 +32,8 @@ public static class SpaceShooterSceneBuilder
         GameObject enemyPrefab = BuildEnemy(enemyMaterial, enemyWingMaterial);
         GameObject playerPrefab = BuildPlayer(playerMaterial, wingMaterial, projectilePrefab);
 
-        Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+        Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Additive);
+        SceneManager.SetActiveScene(scene);
         scene.name = "SpaceShooter";
 
         Camera camera = CreateCamera();
